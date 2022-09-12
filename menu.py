@@ -52,12 +52,20 @@ while True:
 			return pasarANumero(valor, tipoNumero)
 
 	# Pedimos que ingrese una opcion
-	query = obtenerDatos('Que desea hacer\n1- Registrar\n2- Listar Usuarios\n3- Editar Saldo\n', [1,4], 1)
+	query = obtenerDatos('Que desea hacer\n1- Registrar\n2- Listar Usuarios\n3- Buscar Usuarios\n4- Editar Saldo\n5- Eliminar Usuario\n6- Mostrar historial\n7- Salir\n', [1,8], 1)
 
 	if query == 1:
 		ingresos.registrarUsuarios()
 	elif query == 2:
 		ingresos.listar()
 	elif query == 3:
+		ingresos.buscar()
+	elif query == 4:
 		ingresos.modificar()
+	elif query == 5:
+		ingresos.eliminar()
+	elif query == 6:
+		ingresos.historial()
+	elif query == 7:
+		break
 

@@ -7,7 +7,7 @@ class Usuarios():
 		self.depositar = depositar
 		self.retirar = retirar
 		self.saldo = (depositar - retirar)
-		self.cuenta = []
+		self.historial = []
 	
 	def imprimir(self):
 
@@ -18,11 +18,14 @@ class Usuarios():
 		DNI: {}
 		Nombre: {}
 		Apellido: {}
-		'''.format(self.dni, self.nombre, self.apellido,))
+		'''.format(self.dni, self.nombre, self.apellido))
 
 	def editarSaldo(self, depositar, retirar):
 		self.depositar = depositar
+		self.saldo += depositar 
 		self.retirar = retirar
-		self.saldo -= depositar - retirar
+		self.saldo -= retirar
 		print(f'Su saldo ahora es de: {self.saldo}')
 
+	def modificacion(self, deposito, retiro):
+		return f'deposito {deposito}, retiro {retiro}'
